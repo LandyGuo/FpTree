@@ -1,2 +1,3 @@
 # FpTree
-my C++ implementation of  frequency data mining algorithm 
+my C++ implementation of  Mining Frequent Patterns using classical FP-tree growth methods
+
