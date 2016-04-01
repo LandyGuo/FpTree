@@ -364,7 +364,7 @@ void outputItems(list<frequentMode> const &modeLists)
 
 int main(int argc, char * argv[])
 {
-	vector<transaction> transactions = readFile(string(argv[1]));
+	vector<transaction> transactions = readFile(string(argv[1]));//argv[1]是输入文件的路径，输入文件格式参照根目录下transactions文件
 	map<string, int> result = getFrequentItem(transactions);
 	deleteUnfrequentItem(result);//获取一阶频繁项
 	vector<vector<node>>rerankResult = reRankFrequentItem(result, transactions);//将所有结果按一阶频繁项顺序重排
@@ -374,7 +374,4 @@ int main(int argc, char * argv[])
 	generateFrequentItems(headerTable, fpTreeRoot, string(""), modeLists);//递归挖掘Fp-tree
 	outputItems(modeLists);//输出所有频繁项集
 	system("pause");
-	//vector<vector<node>> ConditionalmodeBase = getFrequentModeBase(headerTable[2],fpTreeRoot);
-	//vector<headerItem> headerTable2 = makeheaderTable(ConditionalmodeBase);
-	//node * fptree2 = CreateFpTree(ConditionalmodeBase,headerTable2);
 }
